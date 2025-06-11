@@ -3,52 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nonton The Amateur (2025)</title>
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-  <style>
-    body {
-      background-color: #111;
-      color: white;
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-    }
-    h1 {
-      margin-bottom: 20px;
-    }
-    video {
-      width: 100%;
-      max-width: 720px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-    }
-  </style>
+  <title>The Amateur (2025)</title>
 </head>
-<body>
-  <h1>🎬 The Amateur (2025)</h1>
-  <video id="video" controls></video>
-
-  <script>
-    const video = document.getElementById('video');
-    const videoSrc = "https://be6721.rcr72.waw04.i8yz83pn.com/hls2/01/09193/pzs4j33vpcxg_n/index-v1-a1.m3u8?t=7BWzfV8ixPTHLm8O4dSEhpaxAR0l8ycTmTZElyn1CYE&s=1749663684&e=10800&f=45967801&srv=22&asn=9341&sp=4000&p=";
-
-    if (Hls.isSupported()) {
-      const hls = new Hls();
-      hls.loadSource(videoSrc);
-      hls.attachMedia(video);
-      hls.on(Hls.Events.MANIFEST_PARSED, () => {
-        video.play();
-      });
-    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-      video.src = videoSrc;
-      video.addEventListener('loadedmetadata', () => {
-        video.play();
-      });
-    } else {
-      alert('Browser kamu tidak mendukung HLS (.m3u8)');
-    }
-  </script>
+<body style="background-color: #000; color: #fff; font-family: sans-serif; text-align: center;">
+  <h1>The Amateur (2025)</h1>
+  <video controls autoplay style="width: 90%; max-width: 720px; border-radius: 12px; box-shadow: 0 0 20px #333;">
+    <source src="https://file-eu-par-4.gofile.io/download/web/a2ea5ac9-e1c1-4623-bbaf-9af6c17b2d53/720_%5BPUSATFILM21.INFO%5Dthe-amateur-2025-WEB-DL.mp4" type="video/mp4">
+    Maaf, browser kamu tidak mendukung pemutar video.
+  </video>
 </body>
 </html>
