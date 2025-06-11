@@ -2,64 +2,53 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>The Amateur (2025) - Streaming</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nonton The Amateur (2025)</title>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
   <style>
     body {
-      background: #0e0e0e;
+      background-color: #111;
       color: white;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: Arial, sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 20px;
     }
-
     h1 {
       margin-bottom: 20px;
-      text-align: center;
     }
-
-    .player-container {
+    video {
       width: 100%;
       max-width: 720px;
-      aspect-ratio: 16 / 9;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    .credit {
-      margin-top: 20px;
-      font-size: 14px;
-      color: #888;
-    }
-
-    @media screen and (max-width: 600px) {
-      h1 {
-        font-size: 20px;
-      }
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
     }
   </style>
 </head>
 <body>
-  <h1>🎬 Nonton The Amateur (2025)</h1>
+  <h1>🎬 The Amateur (2025)</h1>
+  <video id="video" controls></video>
 
-  <div class="player-container">
-    <iframe 
-      src="https://watch.asiaplayer.cc/stream/aVViUGF2b1h4cXZxRGtRRldVSFNudlJpc09iejR5NDE2d3FpVVlMU1hlQlVlVUdYZEVVVlZHTHQzYUVLbzR3QnpCLzNTSVJMZmo0R1BJbFJuYStaNEE9PQ==" 
-      allowfullscreen="true">
-    </iframe>
-  </div>
+  <script>
+    const video = document.getElementById('video');
+    const videoSrc = "https://be6721.rcr72.waw04.i8yz83pn.com/hls2/01/09193/pzs4j33vpcxg_n/index-v1-a1.m3u8?t=7BWzfV8ixPTHLm8O4dSEhpaxAR0l8ycTmTZElyn1CYE&s=1749663684&e=10800&f=45967801&srv=22&asn=9341&sp=4000&p=";
 
-  <div class="credit">
-    Sumber video dari AsiaPlayer. Link ini hanya untuk keperluan belajar & percobaan.
-  </div>
+    if (Hls.isSupported()) {
+      const hls = new Hls();
+      hls.loadSource(videoSrc);
+      hls.attachMedia(video);
+      hls.on(Hls.Events.MANIFEST_PARSED, () => {
+        video.play();
+      });
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      video.src = videoSrc;
+      video.addEventListener('loadedmetadata', () => {
+        video.play();
+      });
+    } else {
+      alert('Browser kamu tidak mendukung HLS (.m3u8)');
+    }
+  </script>
 </body>
 </html>
